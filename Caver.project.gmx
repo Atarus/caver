@@ -23,14 +23,19 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\checkElectricNeighbours.gml</script>
+    <script>scripts\checkIceNeighbours.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
-    <object>objects\obj_block</object>
     <object>objects\obj_dynamite_normal</object>
     <object>objects\obj_dynamite_electric</object>
     <object>objects\obj_dynamite_ice</object>
     <object>objects\obj_dynamite_lava</object>
     <object>objects\obj_door</object>
+    <object>objects\obj_block</object>
+    <object>objects\obj_block_conductive</object>
     <object>objects\obj_dirt</object>
     <object>objects\obj_rock</object>
     <object>objects\obj_metal</object>

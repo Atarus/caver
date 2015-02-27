@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_block_conductive</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -60,10 +60,13 @@ icecooldowntimer = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if electrictimer &gt; 0 
+            <string>
+// Set the timers for electric conductivity
+if electrictimer &gt; 0 
 {
     electrictimer -= 1
-    if electrictimer = 0{
+    if electrictimer = 0
+    {
         electric = 0
     }
 }
@@ -73,6 +76,7 @@ if electriccooldowntimer &gt;0
     electriccooldowntimer -= 1
 }
 
+// Set the timers for ice conductivity
 if icetimer &gt; 0 
 {
     icetimer -= 1
@@ -85,103 +89,20 @@ if icecooldowntimer &gt;0
 {
     icecooldowntimer -= 1
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_ice">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if other.electric = 1 and other.electriccooldowntimer &lt; (electriccooldown - 3) {
-    if self.electriccooldowntimer = 0{
-        self.electric = 1
-        self.electrictimer = electricduration
-        electriccooldowntimer = electriccooldown
-    }
-}
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_water">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if other.electric = 1 and other.electriccooldowntimer &lt; (electriccooldown - 3) {
-    if self.electriccooldowntimer = 0{
-        self.electric = 1
-        self.electrictimer = electricduration
-        electriccooldowntimer = electriccooldown
-    }
-}
+// Check for surrounding electrical objects
+var electricUpdate = checkElectricNeighbours(x,y,electriccooldown)
+electric = electricUpdate[0]
+electrictimer = electricUpdate[1]
+electriccooldowntimer = electricUpdate[2]
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_metal">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if other.electric = 1 and other.electriccooldowntimer &lt; (electriccooldown - 3) {
-    if self.electriccooldowntimer = 0{
-        self.electric = 1
-        self.electrictimer = electricduration
-        electriccooldowntimer = electriccooldown
-    }
-}
 
-if other.ice = 1 and other.icecooldowntimer &lt; (icecooldown - 3) {
-    if self.icecooldowntimer = 0{
-        self.ice = 1
-        self.icetimer = iceduration
-        icecooldowntimer = icecooldown
-    }
-}
+// Check for surrounding icey objects
+var iceUpdate = checkIceNeighbours(x,y,icecooldown)
+ice = iceUpdate[0]
+icetimer = iceUpdate[1]
+icecooldowntimer = iceUpdate[2]
+
 </string>
           </argument>
         </arguments>

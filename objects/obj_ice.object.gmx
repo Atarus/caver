@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_block</parentName>
+  <parentName>obj_block_conductive</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -73,93 +73,18 @@ if electriccooldowntimer &gt;0
 if justfrozen &gt; 0{
     justfrozen -= 1
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_ice">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if other.electric = 1 and other.electriccooldowntimer &lt; (electriccooldown - 3) {
-    if self.electriccooldowntimer = 0{
-        self.electric = 1
-        self.electrictimer = electricduration
-        electriccooldowntimer = electriccooldown
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_water">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if other.electric = 1 and other.electriccooldowntimer &lt; (electriccooldown - 3) {
-    if self.electriccooldowntimer = 0{
-        self.electric = 1
-        self.electrictimer = electricduration
-        electriccooldowntimer = electriccooldown
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_metal">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if other.electric = 1 and other.electriccooldowntimer &lt; (electriccooldown - 3) {
-    if self.electriccooldowntimer = 0{
-        self.electric = 1
-        self.electrictimer = electricduration
-        electriccooldowntimer = electriccooldown
-    }
-}
+
+// Check for surrounding blocks with too much electric
+var electricUpdate = checkElectricNeighbours(x,y,electriccooldown)
+electric = electricUpdate[0]
+electrictimer = electricUpdate[1]
+electriccooldowntimer = electricupdate[2]
+
+// Check for surrounding block with too much cold
+var ice Update = checkIceNeighbours(x,y,icecooldown)
+ice = iceUpdate[0]
+icetimer = iceUpdate[1]
+icecooldowntimer = iceUpdate[2]
 </string>
           </argument>
         </arguments>
