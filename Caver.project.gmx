@@ -20,6 +20,7 @@
     <sprite>sprites\spr_ice</sprite>
     <sprite>sprites\spr_water</sprite>
     <sprite>sprites\spr_conveyor</sprite>
+    <sprite>sprites\spr_conveyormoving</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -41,6 +42,7 @@
     <object>objects\obj_metal</object>
     <object>objects\obj_water</object>
     <object>objects\obj_ice</object>
+    <object>objects\obj_conveyor</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test</room>
