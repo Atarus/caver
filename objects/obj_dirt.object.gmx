@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>falling = 0
 yspeed = 0
+xspeed = 0
 terminal = 5
 </string>
           </argument>
@@ -51,7 +52,7 @@ terminal = 5
           <argument>
             <kind>1</kind>
             <string>//falling
-if falling = 1{
+if yspeed &gt; 0{
     if (yspeed &lt; terminal) and place_free(x,y+5){
         yspeed += 9/60
     }
@@ -92,7 +93,7 @@ if falling = 1{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>falling = 1
+            <string>yspeed = 10
 </string>
           </argument>
         </arguments>
