@@ -21,12 +21,14 @@
     <sprite>sprites\spr_water</sprite>
     <sprite>sprites\spr_conveyor</sprite>
     <sprite>sprites\spr_conveyormoving</sprite>
+    <sprite>sprites\spr_rubber</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\checkElectricNeighbours.gml</script>
     <script>scripts\checkIceNeighbours.gml</script>
+    <script>scripts\checkDynamiteOrigin.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -44,6 +46,7 @@
     <object>objects\obj_water</object>
     <object>objects\obj_ice</object>
     <object>objects\obj_conveyor</object>
+    <object>objects\obj_rubber</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test</room>
