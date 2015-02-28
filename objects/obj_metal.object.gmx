@@ -38,6 +38,7 @@ icecooldown = 60
 
 icetimer = 0
 icecooldowntimer = 0
+
 </string>
           </argument>
         </arguments>
@@ -90,24 +91,26 @@ if icecooldowntimer &gt;0
     icecooldowntimer -= 1
 }
 
-// Check for surrounding electrical objects
-var electricUpdate = checkElectricNeighbours(x,y,electriccooldowntimer)
-if electricUpdate
-{
-    electric = 1
-    electrictimer = electricduration
-    electriccooldowntimer = electriccooldown
-}
 
-
-// Check for surrounding icey objects
-var iceUpdate = checkIceNeighbours(x,y,icecooldowntimer)
-if iceUpdate
-{
-    ice = 1
-    icetimer = iceduration
-    icecooldowntimer = icecooldown
-}
+    
+    // Check for surrounding electrical objects
+    var electricUpdate = checkElectricNeighbours(x,y,electriccooldowntimer)
+    if electricUpdate
+    {
+        electric = 1
+        electrictimer = electricduration
+        electriccooldowntimer = electriccooldown
+    }
+    
+    
+    // Check for surrounding icey objects
+    var iceUpdate = checkIceNeighbours(x,y,icecooldowntimer)
+    if iceUpdate
+    {
+        ice = 1
+        icetimer = iceduration
+        icecooldowntimer = icecooldown
+    }
 
 </string>
           </argument>

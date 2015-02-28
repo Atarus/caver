@@ -14,22 +14,22 @@ var object_right = instance_place(instance_x+32,instance_y,obj_block_conductive)
 var object_above = instance_place(instance_x,instance_y-32,obj_block_conductive)
 var object_below = instance_place(instance_x,instance_y+32,obj_block_conductive)
 
-if object_left.ice = 1 and instance_ice_cooldown_timer == 0 
+if object_left.ice = 1 and instance_ice_cooldown_timer == 0 and object_left.icetimer < 27 
 {
     make_ice = true
 }
 
-if object_right.ice = 1 and instance_ice_cooldown_timer == 0 
+if object_right.ice = 1 and instance_ice_cooldown_timer == 0 and object_right.icetimer < 27 
 {
     make_ice = true
 }
 
-if object_above.ice = 1 and instance_ice_cooldown_timer == 0
+if object_above.ice = 1 and instance_ice_cooldown_timer == 0 and object_above.icetimer < 27 
 {
     make_ice = true
 }
 
-if object_below.ice = 1 and instance_ice_cooldown_timer == 0 
+if object_below.ice = 1 and instance_ice_cooldown_timer == 0 and object_below.icetimer < 27 
 {
     make_ice = true
 }
