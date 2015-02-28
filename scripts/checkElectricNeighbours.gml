@@ -62,4 +62,3 @@ if !place_free(instance_x,instance_y+32)
 }
 
 return make_electric
-
