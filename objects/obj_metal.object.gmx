@@ -60,18 +60,18 @@ icecooldowntimer = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-// Set the timers for electric conductivity
+            <string>// Reduce the timer for when the block runs out of electric and turns back to normal
 if electrictimer &gt; 0 
 {
     electrictimer -= 1
-    if electrictimer = 0
+    if electrictimer == 0
     {
         electric = 0
     }
 }
 
-if electriccooldowntimer &gt;0
+// Reduces the cooldown until the block can become electric again.
+if electriccooldowntimer &gt; 0
 {
     electriccooldowntimer -= 1
 }
@@ -91,17 +91,23 @@ if icecooldowntimer &gt;0
 }
 
 // Check for surrounding electrical objects
-var electricUpdate = checkElectricNeighbours(x,y,electriccooldown)
-electric = electricUpdate[0]
-electrictimer = electricUpdate[1]
-electriccooldowntimer = electricUpdate[2]
+var electricUpdate = checkElectricNeighbours(x,y,electriccooldowntimer)
+if electricUpdate
+{
+    electric = 1
+    electrictimer = electricduration
+    electriccooldowntimer = electriccooldown
+}
 
 
 // Check for surrounding icey objects
-var iceUpdate = checkIceNeighbours(x,y,icecooldown)
-ice = iceUpdate[0]
-icetimer = iceUpdate[1]
-icecooldowntimer = iceUpdate[2]
+var iceUpdate = checkIceNeighbours(x,y,icecooldowntimer)
+if iceUpdate
+{
+    ice = 1
+    icetimer = iceduration
+    icecooldowntimer = icecooldown
+}
 
 </string>
           </argument>
@@ -152,11 +158,12 @@ icecooldowntimer = iceUpdate[2]
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if electriccooldowntimer = 0{
+            <string>if electriccooldowntimer = 0
+{
     electric = 1
     electrictimer = electricduration
     electriccooldowntimer = electriccooldown
-    }
+}
 </string>
           </argument>
         </arguments>

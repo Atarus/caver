@@ -74,17 +74,14 @@ if justfrozen &gt; 0{
     justfrozen -= 1
 }
 
-// Check for surrounding blocks with too much electric
-var electricUpdate = checkElectricNeighbours(x,y,electriccooldown)
-electric = electricUpdate[0]
-electrictimer = electricUpdate[1]
-electriccooldowntimer = electricupdate[2]
-
-// Check for surrounding block with too much cold
-var ice Update = checkIceNeighbours(x,y,icecooldown)
-ice = iceUpdate[0]
-icetimer = iceUpdate[1]
-icecooldowntimer = iceUpdate[2]
+// Check for surrounding electrical objects
+var electricUpdate = checkElectricNeighbours(x,y,electriccooldowntimer)
+if electricUpdate
+{
+    electric = 1
+    electrictimer = electricduration
+    electriccooldowntimer = electriccooldown
+}
 </string>
           </argument>
         </arguments>
