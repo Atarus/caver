@@ -37,6 +37,7 @@
     <object>objects\obj_door</object>
     <object>objects\obj_block</object>
     <object>objects\obj_block_conductive</object>
+    <object>objects\obj_block_physics</object>
     <object>objects\obj_dirt</object>
     <object>objects\obj_rock</object>
     <object>objects\obj_metal</object>
