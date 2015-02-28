@@ -22,6 +22,8 @@
     <sprite>sprites\spr_conveyor</sprite>
     <sprite>sprites\spr_conveyormoving</sprite>
     <sprite>sprites\spr_rubber</sprite>
+    <sprite>sprites\spr_glass</sprite>
+    <sprite>sprites\spr_glassbreaking</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -29,6 +31,7 @@
     <script>scripts\checkElectricNeighbours.gml</script>
     <script>scripts\checkIceNeighbours.gml</script>
     <script>scripts\checkDynamiteOrigin.gml</script>
+    <script>scripts\checkGlassNeighbours.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -47,6 +50,7 @@
     <object>objects\obj_ice</object>
     <object>objects\obj_conveyor</object>
     <object>objects\obj_rubber</object>
+    <object>objects\obj_glass</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test</room>
