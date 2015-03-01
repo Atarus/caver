@@ -7,23 +7,41 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_block</sprite>
-    <sprite>sprites\spr_dynamite</sprite>
-    <sprite>sprites\spr_explode_normal</sprite>
-    <sprite>sprites\spr_explode_lava</sprite>
-    <sprite>sprites\spr_explode_ice</sprite>
-    <sprite>sprites\spr_explode_electric</sprite>
     <sprite>sprites\spr_door</sprite>
-    <sprite>sprites\spr_rock</sprite>
-    <sprite>sprites\spr_dirt</sprite>
-    <sprite>sprites\spr_metal</sprite>
-    <sprite>sprites\spr_ice</sprite>
-    <sprite>sprites\spr_water</sprite>
-    <sprite>sprites\spr_conveyor</sprite>
-    <sprite>sprites\spr_conveyormoving</sprite>
-    <sprite>sprites\spr_rubber</sprite>
-    <sprite>sprites\spr_glass</sprite>
-    <sprite>sprites\spr_glassbreaking</sprite>
+    <sprites name="dynamite">
+      <sprite>sprites\spr_dynamite</sprite>
+      <sprite>sprites\spr_explode_normal</sprite>
+      <sprite>sprites\spr_explode_lava</sprite>
+      <sprite>sprites\spr_explode_ice</sprite>
+      <sprite>sprites\spr_explode_electric</sprite>
+    </sprites>
+    <sprites name="blocks">
+      <sprite>sprites\spr_glassbreaking</sprite>
+      <sprite>sprites\spr_glass</sprite>
+      <sprite>sprites\spr_rubber</sprite>
+      <sprite>sprites\spr_conveyormoving</sprite>
+      <sprite>sprites\spr_conveyor</sprite>
+      <sprite>sprites\spr_water</sprite>
+      <sprite>sprites\spr_dirt</sprite>
+      <sprite>sprites\spr_ice</sprite>
+      <sprite>sprites\spr_block</sprite>
+      <sprite>sprites\spr_metal</sprite>
+      <sprite>sprites\spr_rock</sprite>
+    </sprites>
+    <sprites name="main_menu">
+      <sprite>sprites\spr_newGame</sprite>
+      <sprite>sprites\spr_loadGame</sprite>
+      <sprite>sprites\spr_levelSelect</sprite>
+      <sprite>sprites\spr_exitGame</sprite>
+      <sprite>sprites\spr_new_game_hover</sprite>
+      <sprite>sprites\spr_load_game_hover</sprite>
+      <sprite>sprites\spr_level_select_hover</sprite>
+      <sprite>sprites\spr_exit_game_hover</sprite>
+    </sprites>
+    <sprites name="level_select">
+      <sprite>sprites\spr_level_select_box</sprite>
+      <sprite>sprites\spr_level_select_box_hover</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -32,29 +50,46 @@
     <script>scripts\checkIceNeighbours.gml</script>
     <script>scripts\checkDynamiteOrigin.gml</script>
     <script>scripts\checkGlassNeighbours.gml</script>
+    <script>scripts\checkMouseInRectangle.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
-    <object>objects\obj_dynamite_normal</object>
-    <object>objects\obj_dynamite_electric</object>
-    <object>objects\obj_dynamite_ice</object>
-    <object>objects\obj_dynamite_lava</object>
     <object>objects\obj_door</object>
-    <object>objects\obj_block</object>
-    <object>objects\obj_block_conductive</object>
-    <object>objects\obj_block_physics</object>
-    <object>objects\obj_dirt</object>
-    <object>objects\obj_rock</object>
-    <object>objects\obj_metal</object>
-    <object>objects\obj_water</object>
-    <object>objects\obj_ice</object>
-    <object>objects\obj_conveyor</object>
-    <object>objects\obj_rubber</object>
-    <object>objects\obj_glass</object>
+    <objects name="dynamite">
+      <object>objects\obj_dynamite_electric</object>
+      <object>objects\obj_dynamite_ice</object>
+      <object>objects\obj_dynamite_lava</object>
+      <object>objects\obj_dynamite_normal</object>
+    </objects>
+    <objects name="blocks">
+      <object>objects\obj_block</object>
+      <object>objects\obj_block_conductive</object>
+      <object>objects\obj_block_physics</object>
+      <object>objects\obj_conveyor</object>
+      <object>objects\obj_dirt</object>
+      <object>objects\obj_glass</object>
+      <object>objects\obj_ice</object>
+      <object>objects\obj_metal</object>
+      <object>objects\obj_rock</object>
+      <object>objects\obj_rubber</object>
+      <object>objects\obj_water</object>
+    </objects>
+    <objects name="main_menu">
+      <object>objects\obj_menuControl</object>
+    </objects>
+    <objects name="level_select">
+      <object>objects\obj_levelSelectControl</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\welcome_menu</room>
     <room>rooms\james_test</room>
     <room>rooms\casey_test</room>
+    <rooms name="levels">
+      <room>rooms\level_select_menu</room>
+      <room>rooms\level_1</room>
+      <room>rooms\level_2</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
