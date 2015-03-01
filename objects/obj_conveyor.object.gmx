@@ -50,7 +50,7 @@
             <kind>1</kind>
             <string>if activated = 1
 {
-    var collision_object_block = collision_rectangle(x-48,y-16,x+47,y-48,obj_block_physics,false,false)
+    var collision_object_block = collision_rectangle(x-48,y-16,x+47,y-17,obj_block_physics,false,false)
     if collision_object_block != noone
     {
         collision_object_block.x += 1
