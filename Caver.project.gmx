@@ -53,8 +53,8 @@
     <object>objects\obj_glass</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\james_test</room>
     <room>rooms\casey_test</room>
+    <room>rooms\james_test</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

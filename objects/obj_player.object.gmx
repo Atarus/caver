@@ -121,6 +121,12 @@ repeat(abs(round(yspeed))){
     
 }
 
+// sets yspeed to 0 if going very slow ( fix for moving over 1 empty block after conveyor)
+if abs(yspeed) &lt; 0.51 and !place_free(x,y+1)
+{
+    yspeed = 0
+}
+
 </string>
           </argument>
         </arguments>
@@ -221,6 +227,8 @@ else{
 draw_text(40,10,electricamount)
 draw_text(70,10,iceamount)
 draw_text(100,10,lavaamount)
+
+
 </string>
           </argument>
         </arguments>

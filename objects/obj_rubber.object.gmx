@@ -116,10 +116,10 @@ if yspeed &lt; 0
 {
     repeat(abs(yspeed))
     {
-        if place_free(x,y-1)
+        if place_free(x,y-1) 
         {
             y-=1
-        } else
+        } else 
         {
             yspeed = 0
         }
