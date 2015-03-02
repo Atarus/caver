@@ -103,6 +103,7 @@
       <room>rooms\level_select_menu</room>
       <room>rooms\level_1</room>
       <room>rooms\level_2</room>
+      <room>rooms\level_3</room>
     </rooms>
   </rooms>
   <help>
