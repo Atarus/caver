@@ -27,9 +27,11 @@
             <kind>1</kind>
             <string>frozen = 0
 frozen_timer = 0
+max_frozen_time = 300
 
 electric = 0
 electric_timer = 0
+max_electric_time = 60
 
 image_speed = 0
 </string>
@@ -58,7 +60,7 @@ image_speed = 0
 if checkIceNeighbours(x,y,0)
 {
     frozen = 1
-    frozen_timer = 100
+    frozen_timer = max_frozen_timer
 }
 
 // if frozen, destory self if contact with player otherwise return to normal
@@ -84,7 +86,7 @@ if frozen == 1
 if checkElectricNeighbours(x,y,0)
 {
     electric = 1
-    electric_timer = 100
+    electric_timer = max_electric_timer
 }
 
 // if electric reduce timer until dstroy self
@@ -137,7 +139,7 @@ if frozen != 1
           <argument>
             <kind>1</kind>
             <string>frozen = 1
-frozen_timer = 100
+frozen_timer = max_frozen_timer
 </string>
           </argument>
         </arguments>
@@ -161,7 +163,7 @@ frozen_timer = 100
           <argument>
             <kind>1</kind>
             <string>electric = 1
-electric_timer = 100
+electric_timer = max_electric_timer
 </string>
           </argument>
         </arguments>
