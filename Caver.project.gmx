@@ -42,6 +42,9 @@
       <sprite>sprites\spr_level_select_box</sprite>
       <sprite>sprites\spr_level_select_box_hover</sprite>
     </sprites>
+    <sprites name="creatures">
+      <sprite>sprites\spr_monster</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -80,15 +83,21 @@
     <objects name="level_select">
       <object>objects\obj_levelSelectControl</object>
     </objects>
+    <objects name="creatures">
+      <object>objects\obj_monster</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\test_monster</room>
     <room>rooms\welcome_menu</room>
-    <room>rooms\james_test</room>
-    <room>rooms\casey_test</room>
     <rooms name="levels">
       <room>rooms\level_select_menu</room>
       <room>rooms\level_1</room>
       <room>rooms\level_2</room>
+    </rooms>
+    <rooms name="test rooms">
+      <room>rooms\casey_test</room>
+      <room>rooms\james_test_1</room>
     </rooms>
   </rooms>
   <help>
