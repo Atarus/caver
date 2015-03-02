@@ -88,12 +88,13 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\test_monster</room>
     <room>rooms\welcome_menu</room>
+    <room>rooms\test_monster</room>
     <rooms name="levels">
       <room>rooms\level_select_menu</room>
       <room>rooms\level_1</room>
       <room>rooms\level_2</room>
+      <room>rooms\level_3</room>
     </rooms>
     <rooms name="test rooms">
       <room>rooms\casey_test</room>
