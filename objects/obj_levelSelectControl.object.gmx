@@ -47,7 +47,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var currentLevel = room_next(room)
+            <string>var currentLevelID = room_next(room)
 
 //loop vertically
 for (loop_y=0; loop_y&lt;10; loop_y++)
@@ -58,19 +58,34 @@ for (loop_y=0; loop_y&lt;10; loop_y++)
         var box_x = loop_x*100+32
         var box_y = loop_y*50+32
         
-        if checkMouseInRectangle(box_x,box_y,box_x+32,box_y+32)
+        var currentLevelName = room_get_name(currentLevelID)
+        var currentLevelNumber = floor(string_replace(currentLevelName,'level_',''))
+        
+        if currentLevelNumber &lt;= global.room_furthest_reached
         {
-            if mouse_check_button(mb_left)
+            if checkMouseInRectangle(box_x,box_y,box_x+32,box_y+32)
             {
-                if room_exists(currentLevel)
+                if mouse_check_button(mb_left)
                 {
-                    room_goto(currentLevel)
+                    if room_exists(currentLevelID)
+                    {
+                        room_goto(currentLevelID)
+                    }
+                    
                 }
-                
             }
         }
         
-        currentLevel = room_next(currentLevel)
+        currentLevelID = room_next(currentLevelID)
+    }
+}
+
+var room_centre = room_width/2
+if checkMouseInRectangle(room_centre-113,room_height-50,room_centre+113,room_height-18)
+{
+    if mouse_check_button(mb_left)
+    {
+        room_goto(welcome_menu)
     }
 }
 </string>
@@ -110,12 +125,18 @@ for (box_y=0; box_y&lt;10;box_y++)
         var draw_x = box_x*100+32
         var draw_y = box_y*50+32
         
-        if checkMouseInRectangle(draw_x,draw_y,draw_x+32,draw_y+32)
+        if currentLevel &lt;= global.room_furthest_reached
         {
-            draw_sprite(spr_level_select_box_hover,-1,draw_x,draw_y)
-        } else
+            if checkMouseInRectangle(draw_x,draw_y,draw_x+32,draw_y+32)
+            {
+                draw_sprite(spr_level_select_box_hover,-1,draw_x,draw_y)
+            } else
+            {
+                draw_sprite(spr_level_select_box,-1,draw_x,draw_y)
+            }
+        } else 
         {
-            draw_sprite(spr_level_select_box,-1,draw_x,draw_y)
+            draw_sprite(spr_level_select_blocked,-1,draw_x,draw_y)
         }
         
         draw_text(draw_x,draw_y,string(currentLevel))
@@ -123,6 +144,16 @@ for (box_y=0; box_y&lt;10;box_y++)
         currentLevel += 1
     }
     
+}
+
+// place back button
+var room_centre = room_width/2
+if checkMouseInRectangle(room_centre-113,room_height-50,room_centre+113,room_height-18)
+{
+    draw_sprite(spr_back_to_main_menu_hover,-1,room_centre,room_height-34)
+} else 
+{
+    draw_sprite(spr_back_to_main_menu,-1,room_centre,room_height-34)
 }
 </string>
           </argument>

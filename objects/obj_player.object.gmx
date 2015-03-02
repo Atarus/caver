@@ -173,10 +173,23 @@ if abs(yspeed) &lt; 0.51 and !place_free(x,y+1)
           <argument>
             <kind>1</kind>
             <string>if room != room_last{
+    global.room_last_entered +=1
+    
+    if global.room_last_entered &gt; global.room_furthest_reached
+    {
+        global.room_furthest_reached = global.room_last_entered
+    }
+    
+    saveGame()
+    
     room_goto_next()
 }
 else{
-    room_restart()
+    global.room_furthest_reached = global.room_last_entered
+    
+    saveGame()
+    
+    room_goto(welcome_menu)
 }
 </string>
           </argument>

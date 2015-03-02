@@ -30,17 +30,20 @@
     </sprites>
     <sprites name="main_menu">
       <sprite>sprites\spr_newGame</sprite>
-      <sprite>sprites\spr_loadGame</sprite>
+      <sprite>sprites\spr_continue_game</sprite>
       <sprite>sprites\spr_levelSelect</sprite>
       <sprite>sprites\spr_exitGame</sprite>
       <sprite>sprites\spr_new_game_hover</sprite>
-      <sprite>sprites\spr_load_game_hover</sprite>
+      <sprite>sprites\spr_continue_game_hover</sprite>
       <sprite>sprites\spr_level_select_hover</sprite>
       <sprite>sprites\spr_exit_game_hover</sprite>
     </sprites>
     <sprites name="level_select">
       <sprite>sprites\spr_level_select_box</sprite>
       <sprite>sprites\spr_level_select_box_hover</sprite>
+      <sprite>sprites\spr_level_select_blocked</sprite>
+      <sprite>sprites\spr_back_to_main_menu</sprite>
+      <sprite>sprites\spr_back_to_main_menu_hover</sprite>
     </sprites>
     <sprites name="creatures">
       <sprite>sprites\spr_monster</sprite>
@@ -54,6 +57,8 @@
     <script>scripts\checkDynamiteOrigin.gml</script>
     <script>scripts\checkGlassNeighbours.gml</script>
     <script>scripts\checkMouseInRectangle.gml</script>
+    <script>scripts\saveGame.gml</script>
+    <script>scripts\loadGame.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -88,16 +93,16 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\test_monster</room>
     <room>rooms\welcome_menu</room>
+    <rooms name="test rooms">
+      <room>rooms\casey_test</room>
+      <room>rooms\james_test_1</room>
+      <room>rooms\test_monster</room>
+    </rooms>
     <rooms name="levels">
       <room>rooms\level_select_menu</room>
       <room>rooms\level_1</room>
       <room>rooms\level_2</room>
-    </rooms>
-    <rooms name="test rooms">
-      <room>rooms\casey_test</room>
-      <room>rooms\james_test_1</room>
     </rooms>
   </rooms>
   <help>
