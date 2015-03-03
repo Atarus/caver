@@ -28,6 +28,9 @@
       <sprite>sprites\spr_metal</sprite>
       <sprite>sprites\spr_rock</sprite>
     </sprites>
+    <sprites name="creatures">
+      <sprite>sprites\spr_monster</sprite>
+    </sprites>
     <sprites name="main_menu">
       <sprite>sprites\spr_newGame</sprite>
       <sprite>sprites\spr_continue_game</sprite>
@@ -45,8 +48,9 @@
       <sprite>sprites\spr_back_to_main_menu</sprite>
       <sprite>sprites\spr_back_to_main_menu_hover</sprite>
     </sprites>
-    <sprites name="creatures">
-      <sprite>sprites\spr_monster</sprite>
+    <sprites name="pause_menu">
+      <sprite>sprites\spr_pause_menu_block</sprite>
+      <sprite>sprites\spr_pause_menu_block_hover</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -60,9 +64,11 @@
     <script>scripts\saveGame.gml</script>
     <script>scripts\loadGame.gml</script>
   </scripts>
+  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_door</object>
+    <object>objects\obj_pause_menu</object>
     <objects name="dynamite">
       <object>objects\obj_dynamite_electric</object>
       <object>objects\obj_dynamite_ice</object>

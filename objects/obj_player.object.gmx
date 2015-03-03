@@ -34,7 +34,6 @@ right
 
 facing = directions.left
 
-
 runspeed = 3
 jumpspeed = 4 
 terminal = 9
@@ -125,6 +124,12 @@ repeat(abs(round(yspeed))){
 if abs(yspeed) &lt; 0.51 and !place_free(x,y+1)
 {
     yspeed = 0
+}
+
+// pause the game
+if keyboard_check(vk_escape) || keyboard_check(vk_space)
+{
+    instance_create(0,0,obj_pause_menu)
 }
 
 </string>
@@ -406,22 +411,6 @@ else {
 </string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="27">
-      <action>
-        <libid>1</libid>
-        <id>332</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_end_game</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
   </events>
