@@ -59,13 +59,13 @@ for (loop_y=0; loop_y&lt;10; loop_y++)
         var box_y = loop_y*50+32
         
         var currentLevelName = room_get_name(currentLevelID)
-        var currentLevelNumber = floor(string_replace(currentLevelName,'level_',''))
+        var currentLevelNumber = real(string_replace(currentLevelName,'level_',''))
         
         if currentLevelNumber &lt;= global.room_furthest_reached
         {
             if checkMouseInRectangle(box_x,box_y,box_x+32,box_y+32)
             {
-                if mouse_check_button(mb_left)
+                if mouse_check_button_released(mb_left)
                 {
                     if room_exists(currentLevelID)
                     {

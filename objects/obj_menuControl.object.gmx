@@ -67,7 +67,7 @@ loadGame()
 if checkMouseInRectangle(room_centre-81,new_game_y-16,room_centre+81,new_game_y+16)
 {
     new_game_hover = 1
-    if mouse_check_button(mb_left)
+    if mouse_check_button_released(mb_left)
     {
         global.room_last_entered = 1
         room_goto(level_1)
@@ -80,7 +80,7 @@ if checkMouseInRectangle(room_centre-81,new_game_y-16,room_centre+81,new_game_y+
 if checkMouseInRectangle(room_centre-81,continue_game_y-16,room_centre+81,continue_game_y+16)
 {
     continue_game_hover = 1
-    if mouse_check_button(mb_left)
+    if mouse_check_button_released(mb_left)
     {
         var levelName = 'level_' + string(global.room_last_entered)
         room_goto(asset_get_index(levelName))
@@ -93,7 +93,7 @@ if checkMouseInRectangle(room_centre-81,continue_game_y-16,room_centre+81,contin
 if checkMouseInRectangle(room_centre-81,level_select_y-16,room_centre+81,level_select_y+16)
 {
     level_select_hover = 1
-    if mouse_check_button(mb_left)
+    if mouse_check_button_released(mb_left)
     {
         room_goto(level_select_menu)
     }
@@ -105,7 +105,7 @@ if checkMouseInRectangle(room_centre-81,level_select_y-16,room_centre+81,level_s
 if checkMouseInRectangle(room_centre-81,exit_game_y-16,room_centre+81,exit_game_y+16)
 {
     exit_game_hover = 1
-    if mouse_check_button(mb_left)
+    if mouse_check_button_released(mb_left)
     {
         saveGame()
         game_end()

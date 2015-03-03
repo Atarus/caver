@@ -64,7 +64,6 @@
     <script>scripts\saveGame.gml</script>
     <script>scripts\loadGame.gml</script>
   </scripts>
-  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_door</object>
