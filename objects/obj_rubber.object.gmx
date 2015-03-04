@@ -66,6 +66,10 @@ if xspeed &gt; 0
         {
          with (  instance_position(x+17,y,obj_glass)) { instance_destroy()} 
         }
+        else if instance_position(x+17,y,obj_player) != noone
+            {
+                room_restart()
+            }
         else 
         {
             var object_right = instance_position(x+32,y,obj_rubber)
@@ -100,6 +104,10 @@ if xspeed &lt; 0
         {
          with (  instance_position(x-17,y,obj_glass)) { instance_destroy()} 
         }
+        else if instance_position(x-17,y,obj_player) != noone
+            {
+                room_restart()
+            }
         else 
         {
             var object_left = instance_position(x-32,y,obj_rubber)
@@ -134,6 +142,10 @@ if yspeed &lt; 0
         {
          with (  instance_position(x,y-17,obj_glass)) { instance_destroy()} 
         }
+        else if instance_position(x,y-17,obj_player) != noone
+            {
+                room_restart()
+            }
         else 
         {
             yspeed = 0
@@ -158,6 +170,10 @@ if yspeed &gt;= 0
         {
          with (  instance_position(x,y+17,obj_glass)) { instance_destroy()} 
         }
+        else if instance_position(x,y+17,obj_player) != noone
+            {
+                room_restart()
+            }
         else 
         {
             yspeed = 0
