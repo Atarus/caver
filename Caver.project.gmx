@@ -98,10 +98,10 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\casey_test</room>
     <room>rooms\welcome_menu</room>
     <rooms name="test rooms">
       <room>rooms\james_test_1</room>
+      <room>rooms\casey_test</room>
       <room>rooms\test_monster</room>
     </rooms>
     <room>rooms\level_select_menu</room>
