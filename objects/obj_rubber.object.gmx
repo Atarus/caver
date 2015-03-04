@@ -166,7 +166,7 @@ if yspeed &gt;= 0
         {
             y+=1
         } 
-        else if instance_position(x,y+17,obj_glass)
+        else if instance_position(x,y+17,obj_glass) and yspeed &lt; 1
         {
          with (  instance_position(x,y+17,obj_glass)) { instance_destroy()} 
         }
