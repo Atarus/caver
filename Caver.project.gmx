@@ -63,6 +63,8 @@
     <script>scripts\checkMouseInRectangle.gml</script>
     <script>scripts\saveGame.gml</script>
     <script>scripts\loadGame.gml</script>
+    <script>scripts\checkConveyorElectricNeighbours.gml</script>
+    <script>scripts\checkPlayerElectricNeighbours.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>

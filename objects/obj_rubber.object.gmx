@@ -30,7 +30,6 @@ xspeed = 0
 terminal = 9
 hitspeed = 30
 been_hit = false
-dynamiteLocation = ""
 </string>
           </argument>
         </arguments>
@@ -76,11 +75,11 @@ if xspeed &gt; 0
     
             if object_right != noone
             {
-            if object_right.xspeed = 0
-            {
-                object_right.xspeed = xspeed
-                
-            }
+                if object_right.xspeed = 0
+                {
+                    object_right.xspeed = xspeed
+                    
+                }
             }
         xspeed = 0
         }
@@ -114,11 +113,11 @@ if xspeed &lt; 0
     
             if object_left != noone
             {
-            if object_left.xspeed = 0
-            {
-                object_left.xspeed = xspeed
-                
-            }
+                if object_left.xspeed = 0
+                {
+                    object_left.xspeed = xspeed
+                    
+                }
             }
         xspeed = 0   
         }
@@ -211,7 +210,7 @@ if yspeed &gt;= 0
 if !been_hit
 {
     //check dynamite left
-    dynamiteLocation = checkDynamiteOrigin(x,y,x-32,y)
+    var dynamiteLocation = checkDynamiteOrigin(x,y)
     if  dynamiteLocation == "left"
     {
         xspeed = hitspeed
@@ -221,7 +220,7 @@ if !been_hit
     }
     
     //check dynamite top left
-    if checkDynamiteOrigin(x,y,x-32,y-32) == "topleft"
+    if dynamiteLocation == "topleft"
     {
         xspeed = hitspeed - 10
         yspeed = hitspeed - 10
@@ -229,7 +228,7 @@ if !been_hit
     }
     
     //check dynamite top
-    if checkDynamiteOrigin(x,y,x,y-32) == "top"
+    if dynamiteLocation == "top"
     {
         xspeed = 0
         yspeed = hitspeed
@@ -237,7 +236,7 @@ if !been_hit
     }
     
     //check dynamite top right
-    if checkDynamiteOrigin(x,y,x+32,y-32) == "topright"
+    if dynamiteLocation == "topright"
     {
         xspeed = -hitspeed + 10
         yspeed = hitspeed - 10
@@ -245,7 +244,7 @@ if !been_hit
     }
     
     //check dynamite right
-    if checkDynamiteOrigin(x,y,x+32,y) == "right"
+    if dynamiteLocation == "right"
     {
         xspeed = -hitspeed
         yspeed = 0
@@ -253,7 +252,7 @@ if !been_hit
     }
     
     //check dynamite bottom right
-    if checkDynamiteOrigin(x,y,x+32,y+32) == "bottomright"
+    if dynamiteLocation == "bottomright"
     {
         xspeed = -hitspeed + 10
         yspeed = -hitspeed + 10
@@ -261,7 +260,7 @@ if !been_hit
     }
     
     //check dynamite bottom 
-    if checkDynamiteOrigin(x,y,x,y+32) == "bottom"
+    if dynamiteLocation == "bottom"
     {
         xspeed = 0
         yspeed = -hitspeed
@@ -269,7 +268,7 @@ if !been_hit
     }
     
     //check dynamite bottom left 
-    if checkDynamiteOrigin(x,y,x-32,y+32) == "bottomleft"
+    if dynamiteLocation == "bottomleft"
     {
         xspeed = hitspeed - 10
         yspeed = -hitspeed + 10

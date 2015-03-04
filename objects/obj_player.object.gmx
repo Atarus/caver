@@ -140,6 +140,11 @@ if keyboard_check(vk_escape) || keyboard_check(vk_space)
     instance_create(0,0,obj_pause_menu)
 }
 
+if checkPlayerElectricNeighbours(x,y,0)
+{
+    room_restart()
+}
+
 </string>
           </argument>
         </arguments>
