@@ -61,7 +61,12 @@ if xspeed &gt; 0
         if place_free(x+1,y)
         {
             x+=1
-        } else 
+        } 
+        else if instance_position(x+17,y,obj_glass)
+        {
+         with (  instance_position(x+17,y,obj_glass)) { instance_destroy()} 
+        }
+        else 
         {
             var object_right = instance_position(x+32,y,obj_rubber)
     
@@ -90,7 +95,12 @@ if xspeed &lt; 0
         if place_free(x-1,y)
         {
             x-=1
-        } else 
+        } 
+        else if instance_position(x-17,y,obj_glass)
+        {
+         with (  instance_position(x-17,y,obj_glass)) { instance_destroy()} 
+        }
+        else 
         {
             var object_left = instance_position(x-32,y,obj_rubber)
     
@@ -119,7 +129,12 @@ if yspeed &lt; 0
         if place_free(x,y-1) 
         {
             y-=1
-        } else 
+        } 
+        else if instance_position(x,y-17,obj_glass)
+        {
+         with (  instance_position(x,y-17,obj_glass)) { instance_destroy()} 
+        }
+        else 
         {
             yspeed = 0
         }
@@ -138,7 +153,12 @@ if yspeed &gt;= 0
         if place_free(x,y+1)
         {
             y+=1
-        } else 
+        } 
+        else if instance_position(x,y+17,obj_glass)
+        {
+         with (  instance_position(x,y+17,obj_glass)) { instance_destroy()} 
+        }
+        else 
         {
             yspeed = 0
         }
