@@ -211,7 +211,6 @@ obj_player.lavaamount = 0</code>
     <instance objName="obj_rock" x="416" y="448" name="inst_1088D414" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_dirt" x="672" y="64" name="inst_9D92FCA5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rubber" x="320" y="512" name="inst_4C9C3E89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="0" y="0" name="inst_3DA4CD6A" locked="0" code="" scaleX="0" scaleY="0" colour="0" rotation="0"/>
     <instance objName="obj_rock" x="512" y="544" name="inst_1CE9E2C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rubber" x="576" y="512" name="inst_1DFCFFB9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rubber" x="576" y="480" name="inst_7036D80E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
