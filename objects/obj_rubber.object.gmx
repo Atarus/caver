@@ -157,7 +157,7 @@ if yspeed &lt; 0
 }
 
 //move the block down
-if yspeed &gt;= 0
+if xspeed &lt; 25 &amp;&amp; yspeed &gt;= 0 
 {
     repeat(abs(yspeed))
     {
@@ -165,7 +165,7 @@ if yspeed &gt;= 0
         {
             y+=1
         } 
-        else if instance_position(x,y+17,obj_glass) and yspeed &lt; 1
+        else if instance_position(x,y+17,obj_glass) &amp;&amp; yspeed &lt; 1
         {
          with (  instance_position(x,y+17,obj_glass)) { instance_destroy()} 
         }
@@ -182,6 +182,12 @@ if yspeed &gt;= 0
     {
         yspeed += 1
     }
+}
+
+// reset been_hit
+if xspeed == 0 &amp;&amp; yspeed == 1
+{
+    been_hit = false
 }
 </string>
           </argument>
