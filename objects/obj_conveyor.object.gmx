@@ -69,6 +69,10 @@ if activated = 1
 if checkConveyorElectricNeighbours(x,y,0){
     activated = 1
 }
+
+//check for electric
+
+
 </string>
           </argument>
         </arguments>

@@ -10,7 +10,7 @@ instance_y = argument[1]
 instance_electric_cooldown_timer = argument[2]
 
 // check left
-if !place_free(instance_x-64,instance_y)
+if !place_empty(instance_x-64,instance_y)
 {
     var object_left = instance_place(instance_x-64,instance_y,obj_block_conductive)
     
@@ -24,7 +24,7 @@ if !place_free(instance_x-64,instance_y)
 }
 
 // check top left left
-if !place_free(instance_x-64,instance_y-32)
+if !place_empty(instance_x-64,instance_y-32)
 {
     var object_right = instance_place(instance_x-64,instance_y-32,obj_block_conductive)
     
@@ -38,7 +38,7 @@ if !place_free(instance_x-64,instance_y-32)
 }
 
 // check top left
-if !place_free(instance_x-32,instance_y-32)
+if !place_empty(instance_x-32,instance_y-32)
 {
     var object_above = instance_place(instance_x-32,instance_y-32,obj_block_conductive)
     
@@ -52,7 +52,7 @@ if !place_free(instance_x-32,instance_y-32)
 }
 
 // check top
-if !place_free(instance_x,instance_y-32)
+if !place_empty(instance_x,instance_y-32)
 {
     var object_below = instance_place(instance_x,instance_y-32,obj_block_conductive)
     
@@ -66,7 +66,7 @@ if !place_free(instance_x,instance_y-32)
 }
 
 // check top right
-if !place_free(instance_x+32,instance_y-32)
+if !place_empty(instance_x+32,instance_y-32)
 {
     var object_below = instance_place(instance_x+32,instance_y-32,obj_block_conductive)
     
@@ -80,7 +80,7 @@ if !place_free(instance_x+32,instance_y-32)
 }
 
 // check top right right
-if !place_free(instance_x+64,instance_y-32)
+if !place_empty(instance_x+64,instance_y-32)
 {
     var object_below = instance_place(instance_x+64,instance_y-32,obj_block_conductive)
     
@@ -94,7 +94,7 @@ if !place_free(instance_x+64,instance_y-32)
 }
 
 // check right
-if !place_free(instance_x+64,instance_y)
+if !place_empty(instance_x+64,instance_y)
 {
     var object_below = instance_place(instance_x+64,instance_y,obj_block_conductive)
     
@@ -108,7 +108,7 @@ if !place_free(instance_x+64,instance_y)
 }
 
 // check bottom right right
-if !place_free(instance_x+64,instance_y+32)
+if !place_empty(instance_x+64,instance_y+32)
 {
     var object_below = instance_place(instance_x+64,instance_y+32,obj_block_conductive)
     
@@ -122,7 +122,7 @@ if !place_free(instance_x+64,instance_y+32)
 }
 
 // check bottom right
-if !place_free(instance_x+32,instance_y+32)
+if !place_empty(instance_x+32,instance_y+32)
 {
     var object_below = instance_place(instance_x+32,instance_y+32,obj_block_conductive)
     
@@ -136,7 +136,7 @@ if !place_free(instance_x+32,instance_y+32)
 }
 
 // check bottom
-if !place_free(instance_x,instance_y+32)
+if !place_empty(instance_x,instance_y+32)
 {
     var object_below = instance_place(instance_x,instance_y+32,obj_block_conductive)
     
@@ -150,7 +150,7 @@ if !place_free(instance_x,instance_y+32)
 }
 
 // check bottom left
-if !place_free(instance_x-32,instance_y+32)
+if !place_empty(instance_x-32,instance_y+32)
 {
     var object_below = instance_place(instance_x-32,instance_y+32,obj_block_conductive)
     
@@ -164,7 +164,7 @@ if !place_free(instance_x-32,instance_y+32)
 }
 
 // check bottom left left
-if !place_free(instance_x-64,instance_y+32)
+if !place_empty(instance_x-64,instance_y+32)
 {
     var object_below = instance_place(instance_x-64,instance_y+32,obj_block_conductive)
     

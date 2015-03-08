@@ -9,7 +9,7 @@ instance_x = argument[0]
 instance_y = argument[1]
 instance_electric_cooldown_timer = argument[2]
 
-if !place_free(instance_x-32,instance_y)
+if !place_empty(instance_x-32,instance_y)
 {
     var object_left = instance_place(instance_x-32,instance_y,obj_block_conductive)
     
@@ -22,7 +22,7 @@ if !place_free(instance_x-32,instance_y)
     }
 }
 
-if !place_free(instance_x+32,instance_y)
+if !place_empty(instance_x+32,instance_y)
 {
     var object_right = instance_place(instance_x+32,instance_y,obj_block_conductive)
     
@@ -35,7 +35,7 @@ if !place_free(instance_x+32,instance_y)
     }
 }
 
-if !place_free(instance_x,instance_y-32)
+if !place_empty(instance_x,instance_y-32)
 {
     var object_above = instance_place(instance_x,instance_y-32,obj_block_conductive)
     
@@ -48,7 +48,7 @@ if !place_free(instance_x,instance_y-32)
     }
 }
 
-if !place_free(instance_x,instance_y+32)
+if !place_empty(instance_x,instance_y+32)
 {
     var object_below = instance_place(instance_x,instance_y+32,obj_block_conductive)
     
