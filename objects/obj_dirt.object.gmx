@@ -52,7 +52,7 @@ terminal = 5
           <argument>
             <kind>1</kind>
             <string>//falling
-if yspeed &gt; 0{
+if yspeed &gt; 0 or falling = 1{
     if (yspeed &lt; terminal) and place_free(x,y+5){
         yspeed += 9/60
     }
@@ -79,6 +79,19 @@ if yspeed &gt; 0{
     }
 }
 
+
+
+//move if on conveyor
+
+if instance_place(x,y+17,obj_conveyor)
+{
+    if instance_place(x,y+17,obj_conveyor).activated = 1 and place_free(x+1,y)
+    {
+    
+    x+=1
+    falling = 1
+    }
+}
 </string>
           </argument>
         </arguments>

@@ -11,53 +11,57 @@ instance_electric_cooldown_timer = argument[2]
 
 if !place_empty(instance_x-32,instance_y)
 {
-    var object_left = instance_place(instance_x-32,instance_y,obj_block_conductive)
-    
-    if object_left.electric == 1 and object_left.electrictimer < 27
+    if instance_place(instance_x-32,instance_y,obj_block_conductive)
+    {
+    if instance_place(instance_x-32,instance_y,obj_block_conductive).electric == 1 and instance_place(instance_x-32,instance_y,obj_block_conductive).electrictimer < 27
     {
         if instance_electric_cooldown_timer == 0
         {
             make_electric = true
         }
+    }
     }
 }
 
 if !place_empty(instance_x+32,instance_y)
 {
-    var object_right = instance_place(instance_x+32,instance_y,obj_block_conductive)
-    
-     if object_right.electric == 1 and object_right.electrictimer < 27
+    if instance_place(instance_x+32,instance_y,obj_block_conductive)
+    {
+     if instance_place(instance_x+32,instance_y,obj_block_conductive).electric == 1 and instance_place(instance_x+32,instance_y,obj_block_conductive).electrictimer < 27
     {
         if instance_electric_cooldown_timer == 0
         {
             make_electric = true
         }
+    }
     }
 }
 
 if !place_empty(instance_x,instance_y-32)
 {
-    var object_above = instance_place(instance_x,instance_y-32,obj_block_conductive)
-    
-    if object_above.electric == 1 and object_above.electrictimer < 27
+    if instance_place(instance_x,instance_y-32,obj_block_conductive)
+    {
+    if instance_place(instance_x,instance_y-32,obj_block_conductive).electric == 1 and instance_place(instance_x,instance_y-32,obj_block_conductive).electrictimer < 27
     {
         if instance_electric_cooldown_timer == 0
         {
             make_electric = true
         }
     }
+    }
 }
 
 if !place_empty(instance_x,instance_y+32)
 {
-    var object_below = instance_place(instance_x,instance_y+32,obj_block_conductive)
-    
-    if object_below.electric == 1 and object_below.electrictimer < 27
+    if instance_place(instance_x,instance_y+32,obj_block_conductive)
+    {
+    if instance_place(instance_x,instance_y+32,obj_block_conductive).electric == 1 and instance_place(instance_x,instance_y+32,obj_block_conductive).electrictimer < 27
     {
         if instance_electric_cooldown_timer == 0
         {
             make_electric = true
         }
+    }
     }
 }
 

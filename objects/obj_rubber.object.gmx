@@ -184,11 +184,21 @@ if xspeed &lt; 25 &amp;&amp; yspeed &gt;= 0
     }
 }
 
-// reset been_hit
-if xspeed == 0 &amp;&amp; yspeed == 1
+
+
+
+//move if on conveyor
+
+if instance_place(x,y+17,obj_conveyor)
 {
-    been_hit = false
+    if instance_place(x,y+17,obj_conveyor).activated = 1 and place_free(x+1,y)
+    {
+    
+    x+=1
+    falling = 1
+    }
 }
+
 </string>
           </argument>
         </arguments>
@@ -213,7 +223,7 @@ if xspeed == 0 &amp;&amp; yspeed == 1
             <kind>1</kind>
             <string>//find where the dynamite is in a 3x3 grid around the rubber block excluding the centre
 
-if !been_hit
+if not (been_hit = other)
 {
     //check dynamite left
     var dynamiteLocation = checkDynamiteOrigin(x,y)
@@ -221,7 +231,7 @@ if !been_hit
     {
         xspeed = hitspeed
         yspeed = 0
-        been_hit = true
+        been_hit = other
         
     }
     
@@ -230,7 +240,7 @@ if !been_hit
     {
         xspeed = hitspeed - 10
         yspeed = hitspeed - 10
-        been_hit = true
+        been_hit = other
     }
     
     //check dynamite top
@@ -238,7 +248,7 @@ if !been_hit
     {
         xspeed = 0
         yspeed = hitspeed
-        been_hit = true
+        been_hit = other
     }
     
     //check dynamite top right
@@ -246,7 +256,7 @@ if !been_hit
     {
         xspeed = -hitspeed + 10
         yspeed = hitspeed - 10
-        been_hit = true
+        been_hit = other
     }
     
     //check dynamite right
@@ -254,7 +264,7 @@ if !been_hit
     {
         xspeed = -hitspeed
         yspeed = 0
-        been_hit = true
+        been_hit = other
     }
     
     //check dynamite bottom right
@@ -262,7 +272,7 @@ if !been_hit
     {
         xspeed = -hitspeed + 10
         yspeed = -hitspeed + 10
-        been_hit = true
+        been_hit = other
     }
     
     //check dynamite bottom 
@@ -270,7 +280,7 @@ if !been_hit
     {
         xspeed = 0
         yspeed = -hitspeed
-        been_hit = true
+        been_hit = other
     }
     
     //check dynamite bottom left 
@@ -278,7 +288,7 @@ if !been_hit
     {
         xspeed = hitspeed - 10
         yspeed = -hitspeed + 10
-        been_hit = true
+        been_hit = other
     }
 }
 </string>
